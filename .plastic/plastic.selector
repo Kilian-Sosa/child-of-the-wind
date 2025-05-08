@@ -1,0 +1,4 @@
+repository "Crash Bandicoot/Crash Bandicoot@6872540128200@cloud"
+  path "/"
+    br "/main"
+    co "/main"
