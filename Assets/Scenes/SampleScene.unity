@@ -2043,6 +2043,7 @@ GameObject:
   - component: {fileID: 1237678027}
   - component: {fileID: 1237678026}
   - component: {fileID: 1237678025}
+  - component: {fileID: 1237678028}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -2141,6 +2142,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237678023}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &1237678028
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237678023}
+  m_Material: {fileID: 13400000, guid: bf280ac98cccfcc4286d21a74232facb, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.55
+  m_Height: 1.98
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1259196004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,6 +3330,7 @@ MonoBehaviour:
   _jumpForce: 15
   _jumpCooldown: 0.25
   _airMultiplier: 0.4
+  _readyToJump: 0
   _jumpKey: 32
   _playerHeight: 2
   groundLayer:
