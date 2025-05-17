@@ -270,12 +270,13 @@ GameObject:
   - component: {fileID: 150044774}
   - component: {fileID: 150044773}
   - component: {fileID: 150044772}
+  - component: {fileID: 150044775}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &150044771
 Transform:
@@ -307,7 +308,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -366,6 +367,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150044770}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &150044775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150044770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0362fd20074cce043b1f83bef27f73a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particles: {fileID: 0}
+  _isPowerUp: 1
+  _powerUp: knockback
 --- !u!1 &233213682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2062,7 @@ GameObject:
   - component: {fileID: 1237678028}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3260,7 +3276,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1948261974}
   - component: {fileID: 1948261973}
+  - component: {fileID: 1948261977}
   - component: {fileID: 1948261975}
+  - component: {fileID: 1948261976}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3330,13 +3348,37 @@ MonoBehaviour:
   _jumpForce: 15
   _jumpCooldown: 0.25
   _airMultiplier: 0.4
-  _readyToJump: 0
-  _jumpKey: 32
   _playerHeight: 2
-  groundLayer:
+  _groundLayer:
     serializedVersion: 2
     m_Bits: 64
   _orientation: {fileID: 1503775946}
+  _magic1Cooldown: 0.5
+--- !u!114 &1948261976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948261972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b4b60c544848d4ca5abc6e5b83348f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1948261977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948261972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d6a04a2b94a404980f07edd1859f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions: {fileID: 0}
 --- !u!1 &1974349260
 GameObject:
   m_ObjectHideFlags: 0
