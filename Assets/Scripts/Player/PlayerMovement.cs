@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
     void Move() {
 
         _moveDirection = _orientation.forward * _verticalInput + _orientation.right * _horizontalInput;
-        
+
         if (_isGrounded)
             _rb.AddForce(_moveDirection.normalized * _moveSpeed * 10f, ForceMode.Force);
         else if (!_isGrounded)
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour {
         if (flatVel.magnitude > _moveSpeed) {
             Vector3 limitedVel = flatVel.normalized * _moveSpeed;
             _rb.linearVelocity = new(limitedVel.x, _rb.linearVelocity.y, limitedVel.z);
-        }   
+        }
     }
 
     void Jump() {
