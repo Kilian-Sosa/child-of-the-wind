@@ -16,9 +16,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
-      
         powerUps = LoadPowerUps();
-       
         Debug.Log("PowerUps loaded: " + string.Join(", ", powerUps));
     }
 
