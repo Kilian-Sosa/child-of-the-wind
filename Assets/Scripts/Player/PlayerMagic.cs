@@ -21,7 +21,7 @@ public class PlayerMagic : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Q) && playerData.HasMagic1())
+        if ((Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Q)) && playerData.HasMagic1())
         {
             PerformKnockback();
         }
