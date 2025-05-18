@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int strengthLevel;
     public int magicLevel;
     public int resistanceLevel;
+    private int levelUpShowed = 0;
 
     void Awake()
     {
@@ -33,6 +34,9 @@ public class GameManager : MonoBehaviour
         currentXP = PlayerPrefs.GetInt("CurrentXP", 0);
         magicLevel = PlayerPrefs.GetInt("MagicLevel", 1);
         resistanceLevel = PlayerPrefs.GetInt("ResistanceLevel", 1);
+        levelUpShowed = PlayerPrefs.GetInt("LevelUpShowed", 0);
+
+        ShowPxs();
 
         Debug.Log("Level: " + strengthLevel);
         Debug.Log("Magic Level: " + magicLevel);
@@ -43,10 +47,15 @@ public class GameManager : MonoBehaviour
     public void AddXP(int amount)
     {
         currentXP += amount;
-        GameObject.Find("PXs").GetComponent<TextMeshProUGUI>().SetText("PXs:" + currentXP.ToString());
+        ShowPxs();
         if (currentXP >= 1000)
         {
-            showInfo("Ya puedes subir de nivel\n pulsa ESC para acceder al menú");
+            if (levelUpShowed == 0)
+            {
+                showInfo("Ya puedes subir de nivel\n pulsa ESC para acceder al menú");
+                levelUpShowed = 1;
+                PlayerPrefs.SetInt("LevelUpShowed", levelUpShowed);
+            }
         }
 
         PlayerPrefs.SetInt("CurrentXP", currentXP);
@@ -85,6 +94,11 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No se encontró el GameObject 'UX' en la escena.");
         }
 
+    }
+
+    public void ShowPxs()
+    {
+        GameObject.Find("PXs").GetComponent<TextMeshProUGUI>().SetText("PXs:" + currentXP.ToString());
     }
 
 }
