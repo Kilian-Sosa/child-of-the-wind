@@ -25,19 +25,20 @@ public class EnemyDamage : MonoBehaviour
     {
 
         life -= damage;
-        if (life <= 0)
-        {
-            GameManager.instance.AddXP(300);
-            Destroy(gameObject);
+        EnemyPatrol enemyPatrol = GetComponent<EnemyPatrol>();
 
-        }
-        else
-        {
-            Debug.Log("Enemy took damage: " + damage + ", remaining life: " + life);
-            if (damageParticles != null)
-            {
-                damageParticles.Play();
+        if (enemyPatrol != null) enemyPatrol.ApplyKnockback();
+        else GetComponent<VerticalMover>().ApplyKnockback();
+
+        if (life <= 0) {
+                GameManager.instance.AddXP(300);
+                Destroy(gameObject);
+
+            } else {
+                Debug.Log("Enemy took damage: " + damage + ", remaining life: " + life);
+                if (damageParticles != null) {
+                    damageParticles.Play();
+                }
             }
-        }
     }
 }
