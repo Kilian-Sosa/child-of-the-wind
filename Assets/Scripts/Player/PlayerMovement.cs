@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     [Header("Movement")]
     [SerializeField] float _moveSpeed = 5f;
-    [SerializeField] float _turnSpeedDegs = 540f;
+    [SerializeField] float _turnSpeedDegs = 740f;
 
     [Header("Physics")]
     [SerializeField] float _groundDrag = 5f;

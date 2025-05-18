@@ -8,14 +8,14 @@ public class EnemyDamage : MonoBehaviour
 
     public void Start()
     {
-        int playerStrenght =  GameManager.instance.GetStrengthLevel();
-        Debug.Log("Player Strength Level: " + playerStrenght);
+        int playerStrength =  GameManager.instance.GetStrengthLevel();
+        Debug.Log("Player Strength Level: " + playerStrength);
 
-        if (playerStrenght == 1)
+        if (playerStrength == 1)
         {
             damage = 50;
         }
-        else if (playerStrenght == 2)
+        else if (playerStrength == 2)
         {
             damage = 75;
         }

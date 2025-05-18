@@ -22,17 +22,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-
-    void Start()
-    {
         LoadPlayerStats();
     }
 
-
     //PLAYER STATS
-
     public void LoadPlayerStats()
     {
         strengthLevel = PlayerPrefs.GetInt("StrenghtLevel", 1);
