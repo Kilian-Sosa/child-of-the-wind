@@ -9,7 +9,7 @@ public class PlayerMagic : MonoBehaviour
     public float knockbackAngle = 90f;
     public Transform knockbackOrigin;
     public LayerMask enemyLayer;
-
+    public ParticleSystem knockbackParticles;
     private PlayerInventory playerData;
 
     private void Start()
@@ -21,7 +21,7 @@ public class PlayerMagic : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(2) && playerData.HasMagic1())
+        if ((Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Q) && playerData.HasMagic1())
         {
             PerformKnockback();
         }
@@ -45,7 +45,19 @@ public class PlayerMagic : MonoBehaviour
                 {
                     rb.AddForce(directionToEnemy * knockbackForce, ForceMode.Impulse);
                 }
+
+                EnemyDamage enemyDamage = hit.GetComponent<EnemyDamage>();
+                if (enemyDamage != null)
+                {
+                   
+                  enemyDamage.TakeDamage();
+                   
+                }
             }
+        }
+        if (knockbackParticles != null)
+        {
+            knockbackParticles.Play();
         }
 
         Debug.Log("Knockback ejecutado");

@@ -12,11 +12,13 @@ public class PlayerInventory : MonoBehaviour
         "Magic3"
     };
 
+
+
     void Start()
     {
-       //PlayerPrefs.DeleteKey("PlayerPowerUps"); // Clear PlayerPrefs for testing purposes
-        // Get from PlayerPrefs
+      
         powerUps = LoadPowerUps();
+       
         Debug.Log("PowerUps loaded: " + string.Join(", ", powerUps));
     }
 
@@ -105,5 +107,9 @@ public class PlayerInventory : MonoBehaviour
         return loaded;
     }
 
+   
 
+  
+
+  
 }
