@@ -29,7 +29,7 @@ public class PlayerMagic : MonoBehaviour
 
     void PerformKnockback()
     {
-        Vector3 forward = transform.right;
+        Vector3 forward = transform.forward;
         Collider[] hitColliders = Physics.OverlapSphere(knockbackOrigin.position, knockbackRadius, enemyLayer);
 
         foreach (Collider hit in hitColliders)
@@ -70,7 +70,7 @@ public class PlayerMagic : MonoBehaviour
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(knockbackOrigin.position, knockbackRadius);
 
-            Vector3 forward = knockbackOrigin.right;
+            Vector3 forward = knockbackOrigin.forward;
 
             Quaternion leftRotation = Quaternion.AngleAxis(-knockbackAngle / 2f, Vector3.up);
             Quaternion rightRotation = Quaternion.AngleAxis(knockbackAngle / 2f, Vector3.up);
